@@ -1,24 +1,88 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #121212;
+  font-family: "Roboto", sans-serif;
+  background-color: #1c1c1c;
   color: #ffffff;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 header {
-  background-color: #1f1f1f;
-  padding: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #282828;
+  padding: 10px 20px; /* Adjusted padding for a shorter header */
+  height: 60px; /* Adjust this value to make the header shorter */
+  animation: fadeInDown 1s ease-in-out;
+}
+
+#logo {
+  height: 60px; /* Adjust the height of the logo */
+  margin-right: 15px; /* Spacing between the logo and the heading */
+}
+
+header h1 {
+  font-size: 2rem; /* Adjusted font size if necessary */
+  margin: 0;
+  color: #00aaff;
+}
+
+header nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0 15px; /* Adjust horizontal padding for spacing */
+  line-height: 60px; /* Align links vertically within the header */
+}
+
+header nav a:hover {
+  text-decoration: underline;
 }
 
 main {
-  padding: 20px;
+  display: flex;
+  height: calc(100vh - 100px);
 }
 
-.input-section,
-.results-section {
-  margin: 20px 0;
+aside.input-section {
+  width: 350px;
+  background-color: #333333;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+.map-section {
+  flex-grow: 1;
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeInRight 1s ease-in-out;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #282828;
+  margin-top: 20px;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .form-group {
@@ -27,55 +91,74 @@ main {
 
 label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #00aaff;
 }
 
 input {
-  width: 100%;
-  padding: 10px;
+  width: 90%;
+  padding: 12px;
   border: none;
   border-radius: 5px;
   margin-bottom: 10px;
+  background-color: #4a4a4a;
+  color: #ffffff;
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #007bff;
+  padding: 12px 25px;
+  background-color: #00aaff;
   color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease-in-out;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #0088cc;
+  transform: scale(1.05);
 }
 
-.result {
-  margin: 20px 0;
-  padding: 15px;
-  background-color: #2c2c2c;
-  border-radius: 5px;
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.flight-box {
-  margin-bottom: 20px;
-  padding: 15px;
-  background-color: #3a3a3a;
-  border-radius: 5px;
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.flight-box h3 {
-  margin: 0 0 10px;
-  color: #007bff;
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.flight-box p {
-  margin: 5px 0;
-}
-
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #1f1f1f;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
